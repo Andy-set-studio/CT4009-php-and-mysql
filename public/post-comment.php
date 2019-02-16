@@ -3,9 +3,9 @@
 // DB connection gives us a $db global variable
 require_once  'includes/db-connect.php';
 
-$sql = 'INSERT INTO comments' .
-  '(`name`, `comment`)' .
-  'VALUES' .
+$sql = 'INSERT INTO comments ' .
+  '(`name`, `comment`) ' .
+  'VALUES ' .
   '("' . $_POST['name'] . '", "'. $_POST['comment'] . '")';
 
 $result = mysqli_query($db, $sql);
