@@ -3,10 +3,14 @@
 // DB connection gives us a $db global variable
 require_once  'includes/db-connect.php';
 
+// Grab name and comment from $_POST
+$name = filter_var($_POST['name']);
+$comment = filter_var($_POST['comment']);
+
 $sql = 'INSERT INTO comments ' .
   '(`name`, `comment`) ' .
   'VALUES ' .
-  '("' . $_POST['name'] . '", "'. $_POST['comment'] . '")';
+  '("' . $db->escape_string($name) . '", "'. $db->escape_string($comment) . '")';
 
 $result = mysqli_query($db, $sql);
 

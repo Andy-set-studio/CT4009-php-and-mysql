@@ -5,7 +5,8 @@ require_once  __DIR__ . '/db-connect.php';
 
 $sql = 'SELECT `name`, `comment` ' .
   'FROM comments ' .
-  'WHERE `deleted` = 0';
+  'WHERE `deleted` = 0 ' .
+  'ORDER BY `id` DESC';
 
 // Runs the query and returns back a mysql result
 $result = mysqli_query($db, $sql);
